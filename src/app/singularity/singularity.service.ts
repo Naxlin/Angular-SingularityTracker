@@ -7,14 +7,6 @@ import { Singularity } from './singularity.model';
   providedIn: 'root'
 })
 export class SingularityService {
-
-  constructor() { }
-}
-
-@Injectable({
-  providedIn: 'root'
-})
-export class ContactService {
   // Application wide contacts list
   private singularities: Singularity[] = [];
   // Database connection url

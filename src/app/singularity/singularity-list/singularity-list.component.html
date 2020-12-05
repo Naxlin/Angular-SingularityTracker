@@ -1,1 +1,30 @@
-<p>singularity-list works!</p>
+<div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row center">
+            <span class="singularity-header col-xs-12 pad-left-right cushion">Singularities</span>
+          </div>
+          <div class="row">
+            <div class="col-xs-2">
+              <a class="btn btn-success" [routerLink]="['new']">+</a>
+            </div>
+            <div class="input-group col-xs-9 pull-right" style="margin-right: 15px;">
+                <input type="text" class="form-control" placeholder="Enter a search value" #searchBox (keyup)="search(searchBox.value)" style="margin-top: 1px;">
+                <div class="glyphicon glyphicon-search input-group-addon" (click)="search(searchBox.value)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <app-singularity-item 
+                    *ngFor="let sing of singularities | singFilter:searchTerm" 
+                    [singularity]="sing">
+                </app-singularity-item>
+            </div>
+        </div>
+    </div>
+</div>

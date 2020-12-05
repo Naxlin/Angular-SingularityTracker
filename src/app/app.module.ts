@@ -8,6 +8,9 @@ import { SingularityEditComponent } from './singularity/singularity-edit/singula
 import { SingularityDetailComponent } from './singularity/singularity-detail/singularity-detail.component';
 import { SingularityListComponent } from './singularity/singularity-list/singularity-list.component';
 import { HeaderComponent } from './header/header.component';
+import { SingularityItemComponent } from './singularity/singularity-item/singularity-item.component';
+import { SingularityFilterPipe } from './singularity/singularities-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { HeaderComponent } from './header/header.component';
     SingularityEditComponent,
     SingularityDetailComponent,
     SingularityListComponent,
-    HeaderComponent
+    HeaderComponent,
+    SingularityItemComponent,
+    SingularityFilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
