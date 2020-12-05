@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { SingularityItemComponent } from './singularity/singularity-item/singularity-item.component';
 import { SingularityFilterPipe } from './singularity/singularities-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

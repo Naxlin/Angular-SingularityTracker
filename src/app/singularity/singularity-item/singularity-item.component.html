@@ -1,8 +1,8 @@
 <a routerLinkActive="active" href="#" class="list-group-item clearfix" [routerLink]="[singularity.id]">
     <div class="pull-left">
-        <img [src]="'../assets/images/' + singularity?.imageUrl" class="img-responsive" *ngIf="singularity.imageUrl">
+        <img [src]="'../assets/' + singularity?.imageUrl" class="img-responsive" *ngIf="singularity.imageUrl">
     </div>
     <span class="pull-right">
-        <h4 class="list-group-item-heading"> {{ singularity?.name }} </h4>
+        <h4 class="list-group-item-heading" style="padding: 10px; padding-top: 15px;"> {{ singularity?.name }} Singularity</h4>
     </span>
 </a>

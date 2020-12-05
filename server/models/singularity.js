@@ -6,7 +6,7 @@ const singularitySchema = mongoose.Schema({
     imageUrl: { type: String },
     material: { type: String },
     amount: { type: Number },
-    group: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Singularity' }]    
+    compoundOf: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Singularity' }]    
 });
 
 module.exports = mongoose.model('Singularity', singularitySchema);

@@ -1,1 +1,25 @@
-<p>singularity-detail works!</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <img [src]="'assets/' + singularity?.imageUrl" class="image-responsive detail-img buffer-left">
+            <span class="singularity-header buffer-left"> {{ singularity?.name }} Singularity</span>
+            
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-8">
+                <span>Material: </span> {{ singularity?.material }}
+            </div>
+            <div class="btn-toolbar col-sm-4">
+                <button class="btn btn-sm btn-primary btn-shape pull-right" routerLink="edit">Edit</button>
+            </div>
+            <div class="col-sm-8">
+                <span>Amount: </span> {{ singularity?.amount }}
+            </div>
+            <div class="btn-toolbar col-sm-4">
+                <button class="btn btn-sm btn-danger btn-shape pull-right" (click)="onDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

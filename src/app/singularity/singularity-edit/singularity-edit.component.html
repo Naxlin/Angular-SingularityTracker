@@ -1,1 +1,90 @@
-<p>singularity-edit works!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="singularity-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row">
+            <div class="col-sm-12 form-group">
+            <label for="name">Name:</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                [ngModel]="singularity?.name"
+                class="form-control required"
+                size="120"
+                max="120"
+                #name="ngModel"
+                required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 form-group">
+            <label for="email">Image URL:</label>
+            <input
+                type="text"
+                id="imageUrl"
+                name="imageUrl"
+                [ngModel]="singularity?.imageUrl"
+                class="form-control"
+                size="120"
+                max="255">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 form-group">
+            <label for="material">Material:</label>
+            <input
+                type="text"
+                id="material"
+                name="material"
+                [ngModel]="singularity?.material"
+                class="form-control invalid"
+                size="150"
+                max="255"
+                #material="ngModel">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 form-group">
+            <label for="amount">Amount:</label>
+            <input
+                type="text"
+                id="amount"
+                name="amount"
+                [ngModel]="singularity?.amount"
+                class="form-control"
+                size="150"
+                max="255">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="compoundOf" style="margin-left: 14px;">Compound of:</label>
+                <div class="row" id="compoundOf" style="min-height: 3rem;" >
+                    <div *ngFor="let singularity of compound; let i = index">
+                        <div>
+                            <app-singularity-item class="col-sm-11" [singularity]="singularity" routerLink="/singularities/{{singularity.id}}"></app-singularity-item>
+                            <button class="btn btn-danger col-sm-2 deleteButton" (click)="onRemoveItem(i)">X</button>
+                        </div>
+                    </div>
+                    <span class="dragMsg" *ngIf="compound?.length < 1">Drag singularities here</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row alert alert-danger" *ngIf="(name.invalid && name.touched)">
+            The Name field is required.
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 btn-toolbar">
+            <button class="btn btn-success" type="submit" [disabled]="f.invalid">Save</button>
+            <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+            </div>
+        </div>
+
+        </form>
+    </div>
+</div>
+  

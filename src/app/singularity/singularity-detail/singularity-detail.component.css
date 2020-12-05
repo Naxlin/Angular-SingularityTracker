@@ -1,0 +1,32 @@
+span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buffer-left {
+    margin-left: 10px;
+}
+
+.btn-shape {
+    height:25px;
+    margin-bottom: 3px;
+    padding: 2px;
+    width: 60px;
+}
+
+.detail-img {
+    width: 100px;
+    height: 100px;
+}
+
+.singularity-header {
+    font-size: 22px;
+    font-weight: bold;
+    vertical-align: middle;
+}
