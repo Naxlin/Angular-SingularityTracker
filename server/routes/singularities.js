@@ -55,8 +55,9 @@ router.put('/:id', (req, res, next) => {
   Singularity.findOne({ id: req.params.id })
     .then(singularity => {
         singularity.name = req.body.name;
-        singularity.description = req.body.description;
-        singularity.url = req.body.url;
+        singularity.imageUrl = req.body.imageUrl;
+        singularity.material = req.body.material;
+        singularity.amount = req.body.amount;
 
     Singularity.updateOne({ id: req.params.id }, singularity)
         .then(result => {

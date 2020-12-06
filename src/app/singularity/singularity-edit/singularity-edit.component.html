@@ -64,8 +64,8 @@
                 <div class="row" id="compoundOf" style="min-height: 3rem;" >
                     <div *ngFor="let singularity of compound; let i = index">
                         <div>
-                            <app-singularity-item class="col-sm-11" [singularity]="singularity" routerLink="/singularities/{{singularity.id}}"></app-singularity-item>
-                            <button class="btn btn-danger col-sm-2 deleteButton" (click)="onRemoveItem(i)">X</button>
+                            <app-singularity-item class="col-sm-11 buffer-left" [singularity]="singularity" routerLink="/singularities/{{singularity.id}}"></app-singularity-item>
+                            <!-- <button class="btn btn-danger col-sm-2 deleteButton" (click)="onRemoveItem(i)">X</button> -->
                         </div>
                     </div>
                     <span class="dragMsg" *ngIf="compound?.length < 1">Drag singularities here</span>
